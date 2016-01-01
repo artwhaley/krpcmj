@@ -42,6 +42,9 @@ namespace krpcmj
 
 
 
+        /// <summary>
+        /// The smartASS mode   
+        /// </summary>
         [KRPCProperty]
         public static SAMode saMode
         {
@@ -73,6 +76,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Toggles smartASS off 
+        /// </summary>
         [KRPCProperty]
         public static bool saStatus
         {

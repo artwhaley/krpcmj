@@ -13,6 +13,9 @@ namespace krpcmj
     public static partial class krpcmj
     {
 
+        /// <summary>
+        /// Toggles throttle limiting  
+        /// </summary>
         [KRPCProperty]
         public static bool CoreLimitThrottle
         {
@@ -35,6 +38,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Sets max throttle for throttle limiting   
+        /// </summary>
         [KRPCProperty]
         public static double CoreMaxThrottle
         {
@@ -59,6 +65,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Toggles limiting to Terminal Velocity   
+        /// </summary>
         [KRPCProperty]
         public static bool CoreLimitTerminalV
         {
@@ -81,6 +90,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Toggles limiting to Max Q   
+        /// </summary>
         [KRPCProperty]
         public static bool CoreLimitQ
         {
@@ -103,6 +115,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Sets Max Q for limiter   
+        /// </summary>
         [KRPCProperty]
         public static double CoreMaxQ
         {
@@ -127,6 +142,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Toggles limiting acceleration   
+        /// </summary>
         [KRPCProperty]
         public static bool CoreLimitAccel
         {
@@ -149,6 +167,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Sets Max Acceleration for limiter   
+        /// </summary>
         [KRPCProperty]
         public static double CoreMaxAccel
         {

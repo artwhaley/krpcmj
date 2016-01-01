@@ -14,7 +14,10 @@ namespace krpcmj
     public static partial class krpcmj
     {
 
-        [KRPCProperty]
+        /// <summary>
+        /// Returns the deltaV and TWR data for every stage of vessel
+        /// </summary>
+        [KRPCProperty]  //Need to rework this to return a less ridiculous structure than a csv table...
         public static string dvstats
         {
             get
@@ -60,6 +63,9 @@ namespace krpcmj
         }
 
 
+        /// <summary>
+        /// Sets Rover heading - not setup and working yet  
+        /// </summary>
         [KRPCProcedure]
         public static void RoverHeading(float head, float speed)
         {
@@ -79,6 +85,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Translatron KeepVertical - accepts float for vertical velocity and a boolean for whether or not to cancel horizontal velocity   
+        /// </summary>
         [KRPCProcedure]
         public static void Translatron(float vv, bool hv)
         {
@@ -96,6 +105,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Turns off Translatron AP 
+        /// </summary>
         [KRPCProcedure]
         public static void TranslatronCancel()
         {

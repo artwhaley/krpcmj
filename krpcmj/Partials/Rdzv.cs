@@ -13,6 +13,9 @@ namespace krpcmj
 
     public static partial class krpcmj
     {
+        /// <summary>
+        /// Toggles Rendezvous AP on and off
+        /// </summary>
         [KRPCProperty]
         public static bool RendezvousAP
         {
@@ -44,6 +47,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Target distance for Rendezvous AP
+        /// </summary>
         [KRPCProperty]
         public static double rdzvDist
         {
@@ -75,6 +81,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Sets Max number of orbits for the Rendezvous AP 
+        /// </summary>
         [KRPCProperty]
         public static double rdzvMaxOrbits
         {

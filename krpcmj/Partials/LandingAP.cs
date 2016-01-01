@@ -13,6 +13,9 @@ namespace krpcmj
 
     public static partial class krpcmj
     {
+        /// <summary>
+        /// Commands an immediate 'Land Anywhere' landing   
+        /// </summary>
         [KRPCProcedure]
         public static void LandNow()
         {
@@ -26,6 +29,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Commands a landing as close as possible to target   
+        /// </summary>
         [KRPCProcedure]
         public static void LandTarget()
         {
@@ -39,6 +45,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Toggles the Landing AP on and off  
+        /// </summary>
         [KRPCProperty]
         public static bool LandAP
         {
@@ -69,6 +78,9 @@ namespace krpcmj
 
            
         }
+        /// <summary>
+        /// Toggle's Landing AP's ability to deploy gear   
+        /// </summary>
         [KRPCProperty]
         public static bool LandGear
         {
@@ -100,6 +112,9 @@ namespace krpcmj
 
 
         }
+        /// <summary>
+        /// Toggles Landing AP's ability to deploy parachutes   
+        /// </summary>
         [KRPCProperty]
         public static bool LandChutes
         {
@@ -131,6 +146,9 @@ namespace krpcmj
 
 
         }
+        /// <summary>
+        /// Estimates time to Landing   
+        /// </summary>
         [KRPCProperty]
         public static double LandUT
         {
@@ -148,6 +166,9 @@ namespace krpcmj
                 return 0.0;
             }
         }
+        /// <summary>
+        /// Displays map view with selection cursor for selecting landing target   
+        /// </summary>
         [KRPCProcedure]
         public static void LandPickTarget()
         {
@@ -157,6 +178,9 @@ namespace krpcmj
                 activejeb.target.PickPositionTargetOnMap();
             }
         }
+        /// <summary>
+        /// SetsLanding Target by lattitude and longitude   
+        /// </summary>
         [KRPCProcedure]
         public static void LandSetTarget(double lat, double lon)
         {
@@ -166,6 +190,9 @@ namespace krpcmj
                 activejeb.target.SetPositionTarget(activejeb.vessel.mainBody, lat, lon);
             }
         }
+        /// <summary>
+        /// Returns Landing Target Lattitude   
+        /// </summary>
         [KRPCProperty]
         public static double LandTargetLat
         {
@@ -182,6 +209,9 @@ namespace krpcmj
                 return 0.0;
             }
         }
+        /// <summary>
+        /// Returns Landing Target Longitude   
+        /// </summary>
         [KRPCProperty]
         public static double LandTargetLong
         {

@@ -14,6 +14,9 @@ namespace krpcmj
     public static partial class krpcmj
     {
 
+        /// <summary>
+        /// Engages and Disengages Docking Autopilot
+        /// </summary>
         [KRPCProperty]
         public static bool DockingAp
         {
@@ -43,6 +46,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        ///Toggles Docking Safe Distance Override
+        /// </summary>
         [KRPCProperty]
         public static bool DockingOverideDistance
         {
@@ -73,6 +79,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Toggles Docking Force Roll   
+        /// </summary>
         [KRPCProperty]
         public static bool DockingForceRoll
         {
@@ -103,6 +112,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Sets Docking Angle to use with Force Roll  
+        /// </summary>
         [KRPCProperty]
         public static double DockingForceRollAngle
         {
@@ -133,6 +145,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Sets Docking Speed Limit   
+        /// </summary>
         [KRPCProperty]
         public static double DockingSpeedLimit
         {

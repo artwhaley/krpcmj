@@ -13,6 +13,9 @@ namespace krpcmj
 
     public static partial class krpcmj
     {
+        /// <summary>
+        /// Toggles the Ascent AP on and off   
+        /// </summary>
         [KRPCProperty]
         public static bool AscentAP
         {
@@ -41,6 +44,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Sets the Altitude for the Ascent AP
+        /// </summary>
         [KRPCProperty]
         public static double AscentAlt
         {
@@ -71,6 +77,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Sets the Inclination for the Ascent AP 
+        /// </summary>
         [KRPCProperty]
         public static double AscentInc
         {
@@ -100,6 +109,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Enables Limit to AOA for Ascent AP   
+        /// </summary>
         [KRPCProperty]
         public static bool AscentLimitAOA
         {
@@ -129,6 +141,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Sets the maximum AOA, used with Limit to AOA
+        /// </summary>
         [KRPCProperty]
         public static double AscentMaxAOA
         {
@@ -158,6 +173,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Sets the Roll during the Gravity Turn, used with Force Roll   
+        /// </summary>
         [KRPCProperty]
         public static double AscenTurnRoll
         {
@@ -187,6 +205,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Sets the Roll used during vertical ascent, used with Force Roll   
+        /// </summary>
         [KRPCProperty]
         public static double AscenClimbRoll
         {
@@ -216,6 +237,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Toggles Force Roll for Ascent AP   
+        /// </summary>
         [KRPCProperty]
         public static bool AscentForceRoll
         {
@@ -246,6 +270,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Shortcut Method - triggers Immediate Ascent with orbital altitude and inclination as required arguments   
+        /// </summary>
         [KRPCProcedure]
         public static void AscentNow(double Alt, float Inc)
         {
@@ -262,6 +289,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Triggers Ascent to Rendezvous with selected Target Vessel
+        /// </summary>
         [KRPCProcedure]
         public static void AscentRdzv()
         {
@@ -277,6 +307,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Triggers Ascent into Plane of selected Target Vessel   
+        /// </summary>
         [KRPCProcedure]
         public static void AscentIntoPlane()
         {

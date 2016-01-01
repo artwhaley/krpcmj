@@ -13,6 +13,9 @@ namespace krpcmj
 
     public static partial class krpcmj
     {
+        /// <summary>
+        /// Execute Next Node   
+        /// </summary>
         [KRPCProcedure]
         public static void ExecuteNextNode()
         {
@@ -26,6 +29,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Execute All Nodes   
+        /// </summary>
         [KRPCProcedure]
         public static void ExecuteAllNodes()
         {
@@ -39,6 +45,9 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Abort Mechjeb Node Execution   
+        /// </summary>
         [KRPCProcedure]
         public static void AbortExecution()
         {
@@ -53,6 +62,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Create ManeuverNode to match planes between ap_vessel and it's target
+        /// </summary>
         [KRPCProcedure]
         public static void mpMatchplanes()
         {
@@ -76,6 +88,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Create ManeuverNode to Circularize at a given time   
+        /// </summary>
         [KRPCProcedure]
         public static void mpCirc(double time)
         {
@@ -87,6 +102,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Create a ManeuverNode to change Apoapsis at a given time   
+        /// </summary>
         [KRPCProcedure]
         public static void mpApa(double time, double apa)
         {
@@ -98,6 +116,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Create a ManeuverNode to change Periapsis at a given time   
+        /// </summary>
         [KRPCProcedure]
         public static void mpPea(double time, double pea)
         {
@@ -109,6 +130,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Create a ManeuverNode to change inclination at a given time   
+        /// </summary>
         [KRPCProcedure]
         public static void mpInc(double time, double inc)
         {
@@ -120,6 +144,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Creates a ManeuverNode to match velocity with target at a given time   
+        /// </summary>
         [KRPCProcedure]
         public static void mpMatchVelocity(double time)
         {
@@ -132,6 +159,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Creates a ManeuverNode to Hohmann Transfer to target   
+        /// </summary>
         [KRPCProcedure]
         public static void mpHohmann()
         {  
@@ -145,6 +175,9 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Creates a ManeuverNode to transfer to another planet at next Low Delta-V Window  
+        /// </summary>
         [KRPCProcedure]
         public static void mpPlanet()
         {
