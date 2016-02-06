@@ -50,7 +50,7 @@ namespace krpcmj
         ///Toggles Docking Safe Distance Override
         /// </summary>
         [KRPCProperty]
-        public static bool DockingOverideDistance
+        public static bool DockingOverideSafeDistance
         {
             get
             {
@@ -78,7 +78,7 @@ namespace krpcmj
                 }
             }
         }
-
+      
         /// <summary>
         /// Toggles Docking Force Roll   
         /// </summary>
@@ -177,6 +177,73 @@ namespace krpcmj
                 }
             }
         }
+
+        /// <summary>
+        /// Gets Docking X Seperation   
+        /// </summary>
+        [KRPCProperty]
+        public static double DockingSepX
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleDockingAutopilot activedock = activejeb.GetComputerModule("MechJebModuleDockingAutopilot") as MechJebModuleDockingAutopilot;
+                    if (activedock != null)
+                    {
+                        return activedock.lateralSep.x;
+                    }
+                }
+                return 0.0;
+            }
+          
+        }
+
+        /// <summary>
+        /// Gets Docking Y Seperation  
+        /// </summary>
+        [KRPCProperty]
+        public static double DockingSepY
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleDockingAutopilot activedock = activejeb.GetComputerModule("MechJebModuleDockingAutopilot") as MechJebModuleDockingAutopilot;
+                    if (activedock != null)
+                    {
+                        return activedock.lateralSep.y;
+                    }
+                }
+                return 0.0;
+            }
+          
+        }
+
+        /// <summary>
+        /// Sets Docking Speed Limit   
+        /// </summary>
+        [KRPCProperty]
+        public static double DockingSepZ
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleDockingAutopilot activedock = activejeb.GetComputerModule("MechJebModuleDockingAutopilot") as MechJebModuleDockingAutopilot;
+                    if (activedock != null)
+                    {
+                        return activedock.zSep;
+                    }
+                }
+                return 0.0;
+            }
+          
+        }
+
 
     }
 }

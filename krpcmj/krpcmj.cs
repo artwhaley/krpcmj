@@ -1,13 +1,9 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using KRPC.Service;
 using KRPC.Service.Attributes;
 using MuMech;
-using UnityEngine;
-using KRPCSpaceCenter;
+
 
 namespace krpcmj
 {        
@@ -24,11 +20,11 @@ namespace krpcmj
         /// Vessel currently controlled by krpcmj.  
         /// </summary>
         [KRPCProperty]
-        public static KRPCSpaceCenter.Services.Vessel apvessel
+        public static KRPC.SpaceCenter.Services.Vessel apvessel
         {
             set { mjvessel = value.InternalVessel; }
             get {
-                foreach(KRPCSpaceCenter.Services.Vessel v in KRPCSpaceCenter.Services.SpaceCenter.Vessels)
+                foreach(KRPC.SpaceCenter.Services.Vessel v in KRPC.SpaceCenter.Services.SpaceCenter.Vessels)
                 {
                     if (v.InternalVessel == mjvessel) { return v; }
                 }

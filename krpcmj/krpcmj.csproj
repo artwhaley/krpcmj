@@ -33,11 +33,12 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\KSP_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="kRPC">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\kRPC\kRPC.dll</HintPath>
+    <Reference Include="KRPC, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\kRPC\KRPC.dll</HintPath>
     </Reference>
-    <Reference Include="kRPCSpaceCenter">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\kRPC\kRPCSpaceCenter.dll</HintPath>
+    <Reference Include="KRPC.SpaceCenter">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\kRPC\KRPC.SpaceCenter.dll</HintPath>
     </Reference>
     <Reference Include="MechJeb2">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\MechJeb2\Plugins\MechJeb2.dll</HintPath>
@@ -61,11 +62,15 @@
     <Compile Include="Partials\Dock.cs" />
     <Compile Include="Partials\Helpers.cs" />
     <Compile Include="Partials\LandingAP.cs" />
-    <Compile Include="Partials\Misc.cs" />
+    <Compile Include="Partials\Rover.cs" />
+    <Compile Include="Partials\Translatron.cs" />
     <Compile Include="Partials\MP.cs" />
     <Compile Include="Partials\Rdzv.cs" />
     <Compile Include="Partials\SmartASS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -7,6 +7,7 @@ using MuMech;
 using KRPC;
 using KRPC.Service.Attributes;
 using KRPC.Service;
+using KRPC.SpaceCenter;
 
 namespace krpcmj
 {
@@ -105,6 +106,70 @@ namespace krpcmj
                     if (activeasc != null)
                     {
                         activeasc.desiredInclination = value;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Sets the Launch LAN Difference for Launching to Rendezvous
+        /// </summary>
+        [KRPCProperty]
+        public static double AscentLanDifference
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                    if (activeasc != null)
+                    {
+                        return activeasc.launchLANDifference;
+                    }
+                }
+                return 0.0;
+            }
+            set
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                    if (activeasc != null)
+                    {
+                        activeasc.launchLANDifference = value;
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Sets the Launch Phase Angle
+        /// </summary>
+        [KRPCProperty]
+        public static double AscentPhaseAngle
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                    if (activeasc != null)
+                    {
+                        return activeasc.launchPhaseAngle;
+                    }
+                }
+                return 0.0;
+            }
+            set
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                    if (activeasc != null)
+                    {
+                        activeasc.launchPhaseAngle = value;
                     }
                 }
             }
@@ -269,6 +334,38 @@ namespace krpcmj
                 }
             }
         }
+        /// <summary>
+        /// Toggles Force Roll for Ascent AP   
+        /// </summary>
+        [KRPCProperty]
+        public static bool AscentCorrectiveSteering
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                    if (activeasc != null)
+                    {
+                        return activeasc.correctiveSteering;
+                    }
+                }
+                return false;
+            }
+            set
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                    if (activeasc != null)
+                    {
+                        activeasc.correctiveSteering = value;
+                    }
+                }
+            }
+        }
 
         /// <summary>
         /// Shortcut Method - triggers Immediate Ascent with orbital altitude and inclination as required arguments   
@@ -293,7 +390,7 @@ namespace krpcmj
         /// Triggers Ascent to Rendezvous with selected Target Vessel
         /// </summary>
         [KRPCProcedure]
-        public static void AscentRdzv()
+        public static void AscentRdzv(KRPC.SpaceCenter.Services.Vessel Targ)
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -301,6 +398,8 @@ namespace krpcmj
                 MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
                 if (activeasc != null)
                 {
+                    activeasc.core.target.Set(Targ.InternalVessel);
+                    activeasc.core.vessel.targetObject = Targ.InternalVessel;
                     activeasc.StartCountdown(activeasc.vesselState.time + LaunchTiming.TimeToPhaseAngle(activeasc.launchPhaseAngle, activeasc.vessel.mainBody, activeasc.vessel.longitude,activeasc.core.target.TargetOrbit));   
                     activeasc.enabled = true;
                 }

@@ -167,6 +167,22 @@ namespace krpcmj
             }
         }
         /// <summary>
+        /// Estimates time to Suicide Burn
+        /// </summary>
+        [KRPCProperty]
+        public static double LandSuicideBurn
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    return OrbitExtensions.SuicideBurnCountdown(activejeb.vessel.orbit, activejeb.vesselState, activejeb.vessel);
+                }
+                return 0.0;
+            }
+        }
+        /// <summary>
         /// Displays map view with selection cursor for selecting landing target   
         /// </summary>
         [KRPCProcedure]

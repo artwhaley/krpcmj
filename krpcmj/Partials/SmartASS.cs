@@ -40,8 +40,6 @@ namespace krpcmj
             VERTICAL_PLUS
         }
 
-
-
         /// <summary>
         /// The smartASS mode   
         /// </summary>
@@ -141,6 +139,7 @@ namespace krpcmj
                 }
             }
         }
+
         /// <summary>
         /// Enabling force roll and accepting a float for roll value
         /// </summary>
@@ -158,6 +157,7 @@ namespace krpcmj
                 }
             }
         }
+        
         /// <summary>
         /// Disables Force Roll
         /// </summary>
