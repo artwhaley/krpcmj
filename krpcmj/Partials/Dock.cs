@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using MuMech;
-using KRPC;
 using KRPC.Service.Attributes;
-using KRPC.Service;
+
 
 namespace krpcmj
 {
