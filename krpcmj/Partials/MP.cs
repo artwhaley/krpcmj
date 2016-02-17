@@ -53,6 +53,7 @@ namespace krpcmj
                 if (activenode != null)
                 {
                     activenode.Abort();
+                   
                 }
             }
         }
@@ -186,7 +187,22 @@ namespace krpcmj
             }
         }
 
-     
+        /// <summary>
+        /// Creates a ManeuverNode to adjust closest approach to target
+        /// </summary>
+        [KRPCProcedure]
+        public static void mpFineTuneCa(double distance)
+        {
+            MechJebCore activejeb = GetJeb();
+            if (activejeb != null)
+            {
+                double burnt = 0;
+                Vector3d deltav = OrbitalManeuverCalculator.DeltaVAndTimeForCheapestCourseCorrection(mjvessel.orbit,Planetarium.GetUniversalTime(), mjvessel.targetObject.GetOrbit(), distance, out burnt);
+                activejeb.vessel.PlaceManeuverNode(activejeb.vessel.orbit, deltav, burnt);
+            }
+        }
+
+
 
 
 

@@ -188,6 +188,30 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Toggles AutoWarp for Mechjeb
+        /// </summary>
+        [KRPCProperty]
+        public static bool Autowarp
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    return activejeb.node.autowarp;
+                }
+                return false;
+            }
+            set
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    activejeb.node.autowarp = value;
+                }
+            }
+        }
 
     }
 }

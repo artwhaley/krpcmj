@@ -98,9 +98,11 @@ namespace krpcmj
                 if (activejeb != null)
                 {
                     MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                    MechJebModuleAscentGuidance activegui = activejeb.GetComputerModule("MechJebModuleAscentGuidance") as MechJebModuleAscentGuidance;
                     if (activeasc != null)
                     {
                         activeasc.desiredInclination = value;
+                        activegui.desiredInclination = value;
                     }
                 }
             }
@@ -372,8 +374,10 @@ namespace krpcmj
             if (activejeb != null)
             {
                 MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                MechJebModuleAscentGuidance activegui = activejeb.GetComputerModule("MechJebModuleAscentGuidance") as MechJebModuleAscentGuidance;
                 if (activeasc != null)
                 {
+                    activegui.desiredInclination = Inc;
                     activeasc.desiredOrbitAltitude.val = Alt;
                     activeasc.desiredInclination = Inc;
                     activeasc.enabled = true;

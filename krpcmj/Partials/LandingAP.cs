@@ -74,6 +74,29 @@ namespace krpcmj
            
         }
         /// <summary>
+        /// Toggles the Landing Prediction Display  
+        /// </summary>
+        [KRPCProperty]
+        public static bool LandShowPath
+        {
+            set
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleLandingGuidance activelnd = activejeb.GetComputerModule("MechJebModuleLandingGuidance") as MechJebModuleLandingGuidance;
+                    if (activelnd != null)
+                    {
+                        activelnd.predictor.enabled = value;
+                        activelnd.predictor.showTrajectory = value;
+                        activelnd.predictor.makeAerobrakeNodes = value;
+                        activelnd.predictor.worldTrajectory = value;
+                        activelnd.predictor.camTrajectory = value;
+                    }
+                }
+            }
+        }
+        /// <summary>
         /// Toggle's Landing AP's ability to deploy gear   
         /// </summary>
         [KRPCProperty]
