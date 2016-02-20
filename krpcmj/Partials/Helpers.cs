@@ -48,7 +48,12 @@ namespace krpcmj
         /// </summary>
         [KRPCProcedure]
         public static double NextTimeAlt(double alt)
-        {return mjvessel.orbit.NextTimeOfRadius(Planetarium.GetUniversalTime(), alt);}
+
+        {
+
+            double timeraw =  mjvessel.orbit.NextTimeOfRadius(Planetarium.GetUniversalTime(), (alt+apvessel.Orbit.Body.EquatorialRadius));
+            return timeraw - Planetarium.GetUniversalTime();
+        }
 
         /// <summary>
         /// Returns Vessel's time of closest approach to it's target   
@@ -57,7 +62,7 @@ namespace krpcmj
         public static double closestAppTime()
         {
                 Vessel target = mjvessel.targetObject as Vessel;
-                return mjvessel.orbit.NextClosestApproachTime(target.orbit, Planetarium.GetUniversalTime());
+                return mjvessel.orbit.NextClosestApproachTime(target.orbit, Planetarium.GetUniversalTime())-Planetarium.GetUniversalTime();
         }
 
         /// <summary>
@@ -93,18 +98,18 @@ namespace krpcmj
         public static bool IsEqDn()
         { return mjvessel.orbit.DescendingNodeEquatorialExists(); }
         /// <summary>
-        /// Returns the time of next Equatorial Ascending Node   
+        /// Returns the time until Equatorial Ascending Node   
         /// </summary>
         [KRPCProcedure]
         public static double timeEqAn()
-        { return mjvessel.orbit.TimeOfAscendingNodeEquatorial(Planetarium.GetUniversalTime()); }
+        { return mjvessel.orbit.TimeOfAscendingNodeEquatorial(Planetarium.GetUniversalTime()) - Planetarium.GetUniversalTime();}
 
         /// <summary>
-        /// Returns the time of next Euatorial Descending Node   
+        /// Returns the time until Euatorial Descending Node   
         /// </summary>
         [KRPCProcedure]
         public static double timeEqDn()
-        {return mjvessel.orbit.TimeOfDescendingNodeEquatorial(Planetarium.GetUniversalTime());}
+        {return mjvessel.orbit.TimeOfDescendingNodeEquatorial(Planetarium.GetUniversalTime()) - Planetarium.GetUniversalTime();}
 
 
         /// <summary>
@@ -121,18 +126,18 @@ namespace krpcmj
         public static bool IsTgtDn()
         { return mjvessel.orbit.DescendingNodeExists(mjvessel.targetObject.GetOrbit()); }
         /// <summary>
-        /// Returns the time of next Equatorial Ascending Node   
+        /// Returns the time until next Equatorial Ascending Node   
         /// </summary>
         [KRPCProcedure]
         public static double timeTgtAn()
-        { return mjvessel.orbit.TimeOfAscendingNode(mjvessel.targetObject.GetOrbit(), Planetarium.GetUniversalTime()); }
+        { return mjvessel.orbit.TimeOfAscendingNode(mjvessel.targetObject.GetOrbit(), Planetarium.GetUniversalTime())-Planetarium.GetUniversalTime(); }
 
         /// <summary>
-        /// Returns the time of next Euatorial Descending Node   
+        /// Returns the time until next Euatorial Descending Node   
         /// </summary>
         [KRPCProcedure]
         public static double timeTgtDn()
-        { return mjvessel.orbit.TimeOfDescendingNode(mjvessel.targetObject.GetOrbit(), Planetarium.GetUniversalTime()) ; }
+        { return mjvessel.orbit.TimeOfDescendingNode(mjvessel.targetObject.GetOrbit(), Planetarium.GetUniversalTime()) - Planetarium.GetUniversalTime() ; }
 
         /// <summary>
         /// Returns the velocity difference between vessel and it's target at closest approach   

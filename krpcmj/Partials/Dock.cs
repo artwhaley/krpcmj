@@ -218,7 +218,7 @@ namespace krpcmj
         }
 
         /// <summary>
-        /// Sets Docking Speed Limit   
+        /// Gets DockingZ Separation   
         /// </summary>
         [KRPCProperty]
         public static double DockingSepZ

@@ -67,6 +67,7 @@
     <Compile Include="Partials\MP.cs" />
     <Compile Include="Partials\Rdzv.cs" />
     <Compile Include="Partials\SmartASS.cs" />
+    <Compile Include="Partials\warp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -239,7 +239,7 @@ namespace krpcmj
         /// Sets the Roll during the Gravity Turn, used with Force Roll   
         /// </summary>
         [KRPCProperty]
-        public static double AscenTurnRoll
+        public static double AscentTurnRoll
         {
             get
             {
@@ -271,7 +271,7 @@ namespace krpcmj
         /// Sets the Roll used during vertical ascent, used with Force Roll   
         /// </summary>
         [KRPCProperty]
-        public static double AscenClimbRoll
+        public static double AscentClimbRoll
         {
             get
             {
@@ -424,7 +424,27 @@ namespace krpcmj
         }
 
 
-
+        /// <summary>
+        /// Sets the Roll during the Gravity Turn, used with Force Roll   
+        /// </summary>
+        [KRPCProperty]
+        public static string AscentStatus
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleAscentAutopilot activeasc = activejeb.GetComputerModule("MechJebModuleAscentAutopilot") as MechJebModuleAscentAutopilot;
+                    if (activeasc != null)
+                    {
+                        return activeasc.status;
+                    }
+                }
+                return "";
+            }
+             
+        }
 
 
 

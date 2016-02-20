@@ -110,6 +110,29 @@ namespace krpcmj
             }
         }
 
+        /// <summary>
+        /// Rendezvous Autopilot Status Message
+        /// </summary>
+        [KRPCProperty]
+        public static string rdzvMessage
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleRendezvousAutopilot activerend = activejeb.GetComputerModule("MechJebModuleRendezvousAutopilot") as MechJebModuleRendezvousAutopilot;
+                    if (activerend != null)
+                    {
+                        return activerend.status;
+                    }
+
+                }
+                return "";
+            }
+           
+        }
+
     }
 
 }

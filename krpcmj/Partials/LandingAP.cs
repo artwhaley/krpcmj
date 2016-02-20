@@ -262,6 +262,30 @@ namespace krpcmj
                 return 0.0;
             }
         }
+        /// <summary>
+        /// Returns Status String Messages  
+        /// </summary>
+        [KRPCProperty]
+        public static string LandMessage
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleLandingAutopilot activelnd = activejeb.GetComputerModule("MechJebModuleLandingAutopilot") as MechJebModuleLandingAutopilot;
+                    if (activelnd != null)
+                    {
+                        return activelnd.status;
+                    }
+                }
+                return "";
+            }
+           
+
+
+        }
+
 
     }
 

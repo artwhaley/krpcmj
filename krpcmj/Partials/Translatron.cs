@@ -13,7 +13,7 @@ namespace krpcmj
         }
 
         /// <summary>
-        /// Rover Heading 
+        /// Translatron Mode Enabled/Disabled
         /// </summary>
         [KRPCProperty]
         public static bool TranslatronAP
@@ -47,7 +47,7 @@ namespace krpcmj
         }
 
         /// <summary>
-        /// Rover Heading 
+        /// Translatorn Cancel Horizontal Velocity
         /// </summary>
         [KRPCProperty]
         public static bool TranslatronCancelHv
@@ -81,7 +81,7 @@ namespace krpcmj
         }
 
         /// <summary>
-        /// Rover Heading 
+        /// Translatron Vertical Velocity Target
         /// </summary>
         [KRPCProperty]
         public static double TranslatronVv
@@ -115,7 +115,7 @@ namespace krpcmj
         }
 
         /// <summary>
-        /// Rover Heading 
+        /// Translatron Mode
         /// </summary>
         [KRPCProperty]
         public static TransMode TranslatronMode
@@ -147,6 +147,7 @@ namespace krpcmj
                 }
             }
         }
+
 
         public static void TranslatronCancel()
         {

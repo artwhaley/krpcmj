@@ -9,6 +9,29 @@ namespace krpcmj
     public static partial class krpcmj
     {
         /// <summary>
+        /// Rendezvous Autopilot Status Message
+        /// </summary>
+        [KRPCProperty]
+        public static bool ExecutorStatus
+        {
+            get
+            {
+                MechJebCore activejeb = GetJeb();
+                if (activejeb != null)
+                {
+                    MechJebModuleNodeExecutor activenode = activejeb.GetComputerModule("MechJebModuleNodeExecutor") as MechJebModuleNodeExecutor;
+                    if (activenode != null)
+                    {
+                        return activenode.enabled;
+                    }
+
+                }
+                return false;
+            }
+
+        }
+
+        /// <summary>
         /// Execute Next Node   
         /// </summary>
         [KRPCProcedure]

@@ -58,6 +58,7 @@ namespace krpcmj
                     if (activenoder.enabled == true) { holder += 8; } //8 for node executor module
                     if (activerendez.enabled == true) { holder += 16; } //16 rendezvous module
                     if (activetrans.enabled == true) { holder += 64; }//64 for translate
+                    if (activeass.enabled == true) { holder += 128; }//128 for smartass
                     return holder;
                 }
                 return (byte)0;
