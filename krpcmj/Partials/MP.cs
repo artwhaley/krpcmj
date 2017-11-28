@@ -85,7 +85,7 @@ namespace krpcmj
         /// Create ManeuverNode to match planes between ap_vessel and it's target
         /// </summary>
         [KRPCProcedure]
-        public static void mpMatchplanes()
+        public static void MPMatchplanes()
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -111,7 +111,7 @@ namespace krpcmj
         /// Create ManeuverNode to Circularize at a given time   
         /// </summary>
         [KRPCProcedure]
-        public static void mpCirc(double time)
+        public static void MPCirc(double time)
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -125,7 +125,7 @@ namespace krpcmj
         /// Create a ManeuverNode to change Apoapsis at a given time   
         /// </summary>
         [KRPCProcedure]
-        public static void mpApa(double time, double apa)
+        public static void MPApa(double time, double apa)
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -139,7 +139,7 @@ namespace krpcmj
         /// Create a ManeuverNode to change Periapsis at a given time   
         /// </summary>
         [KRPCProcedure]
-        public static void mpPea(double time, double pea)
+        public static void MPPea(double time, double pea)
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -153,7 +153,7 @@ namespace krpcmj
         /// Create a ManeuverNode to change inclination at a given time   
         /// </summary>
         [KRPCProcedure]
-        public static void mpInc(double time, double inc)
+        public static void MPInc(double time, double inc)
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -167,7 +167,7 @@ namespace krpcmj
         /// Creates a ManeuverNode to match velocity with target at a given time   
         /// </summary>
         [KRPCProcedure]
-        public static void mpMatchVelocity(double time)
+        public static void MPMatchVelocity(double time)
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -182,7 +182,7 @@ namespace krpcmj
         /// Creates a ManeuverNode to Hohmann Transfer to target   
         /// </summary>
         [KRPCProcedure]
-        public static void mpHohmann()
+        public static void MPHohmann()
         {  
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -198,7 +198,7 @@ namespace krpcmj
         /// Creates a ManeuverNode to transfer to another planet at next Low Delta-V Window  
         /// </summary>
         [KRPCProcedure]
-        public static void mpPlanet()
+        public static void MPPlanet()
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)
@@ -214,7 +214,7 @@ namespace krpcmj
         /// Creates a ManeuverNode to adjust closest approach to target
         /// </summary>
         [KRPCProcedure]
-        public static void mpFineTuneCa(double distance)
+        public static void MPFineTuneCa(double distance)
         {
             MechJebCore activejeb = GetJeb();
             if (activejeb != null)

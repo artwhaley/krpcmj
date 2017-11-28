@@ -11,7 +11,7 @@ namespace krpcmj
     /// <summary>
     /// Static Service for Interacting with Mechjeb 2.  
     /// </summary>
-    [KRPCService(GameScene = GameScene.Flight)]
+    [KRPCService(Name = "KRPCMJ", GameScene = GameScene.Flight)]
     public static partial class krpcmj
     {
         public static Vessel mjvessel;
@@ -20,7 +20,7 @@ namespace krpcmj
         /// Vessel currently controlled by krpcmj.  
         /// </summary>
         [KRPCProperty]
-        public static KRPC.SpaceCenter.Services.Vessel apvessel
+        public static KRPC.SpaceCenter.Services.Vessel APVessel
         {
             set { mjvessel = value.InternalVessel; }
             get {
@@ -36,7 +36,7 @@ namespace krpcmj
         /// Returns an int that bitwise encodes the mechjeb autopilot status - 0=AP off   
         /// </summary>
         [KRPCProperty]    //Probably need to change this to a list of [flags]enum s
-        public static int apStatus
+        public static int APStatus
         {
             get
             {

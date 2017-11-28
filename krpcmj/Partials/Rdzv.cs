@@ -46,7 +46,7 @@ namespace krpcmj
         /// Target distance for Rendezvous AP
         /// </summary>
         [KRPCProperty]
-        public static double rdzvDist
+        public static double RdzvDist
         {
             get
             {
@@ -80,7 +80,7 @@ namespace krpcmj
         /// Sets Max number of orbits for the Rendezvous AP 
         /// </summary>
         [KRPCProperty]
-        public static double rdzvMaxOrbits
+        public static double RdzvMaxOrbits
         {
             get
             {
@@ -114,7 +114,7 @@ namespace krpcmj
         /// Rendezvous Autopilot Status Message
         /// </summary>
         [KRPCProperty]
-        public static string rdzvMessage
+        public static string RdzvMessage
         {
             get
             {
