@@ -15,7 +15,7 @@ namespace krpcmj
         /// Returns the DV stats for the mjvessel  
         /// </summary>
         [KRPCProcedure]
-        public static IList<IList<double>> dvstats()
+        public static IList<IList<double>> DVStats()
         {
             IList<IList<double>> stats = new List<IList<double>>();
             MechJebCore activejeb = GetJeb();
@@ -51,7 +51,7 @@ namespace krpcmj
 
         {
 
-            double timeraw =  mjvessel.orbit.NextTimeOfRadius(Planetarium.GetUniversalTime(), (alt+apvessel.Orbit.Body.EquatorialRadius));
+            double timeraw =  mjvessel.orbit.NextTimeOfRadius(Planetarium.GetUniversalTime(), (alt+APVessel.Orbit.Body.EquatorialRadius));
             return timeraw - Planetarium.GetUniversalTime();
         }
 
@@ -59,7 +59,7 @@ namespace krpcmj
         /// Returns Vessel's time of closest approach to it's target   
         /// </summary>
         [KRPCProcedure]
-        public static double closestAppTime()
+        public static double ClosestAppTime()
         {
                 Vessel target = mjvessel.targetObject as Vessel;
                 return mjvessel.orbit.NextClosestApproachTime(target.orbit, Planetarium.GetUniversalTime())-Planetarium.GetUniversalTime();
@@ -69,7 +69,7 @@ namespace krpcmj
         /// Returns Vessel's distance at closest approach to it's target   
         /// </summary>
         [KRPCProcedure]
-        public static double closestAppDist()
+        public static double ClosestAppDist()
         {
             Vessel target = mjvessel.targetObject as Vessel;
             return mjvessel.orbit.NextClosestApproachDistance(target.orbit, Planetarium.GetUniversalTime());
@@ -79,7 +79,7 @@ namespace krpcmj
         /// Returns relative inclination between vessel and it's target   
         /// </summary>
         [KRPCProcedure]
-        public static double relativeInc()
+        public static double RelativeInc()
         {
             Vessel target = mjvessel.targetObject as Vessel;
             return mjvessel.orbit.RelativeInclination(target.orbit);
@@ -101,14 +101,14 @@ namespace krpcmj
         /// Returns the time until Equatorial Ascending Node   
         /// </summary>
         [KRPCProcedure]
-        public static double timeEqAn()
+        public static double TimeEqAn()
         { return mjvessel.orbit.TimeOfAscendingNodeEquatorial(Planetarium.GetUniversalTime()) - Planetarium.GetUniversalTime();}
 
         /// <summary>
         /// Returns the time until Euatorial Descending Node   
         /// </summary>
         [KRPCProcedure]
-        public static double timeEqDn()
+        public static double TimeEqDn()
         {return mjvessel.orbit.TimeOfDescendingNodeEquatorial(Planetarium.GetUniversalTime()) - Planetarium.GetUniversalTime();}
 
 
@@ -129,14 +129,14 @@ namespace krpcmj
         /// Returns the time until next Equatorial Ascending Node   
         /// </summary>
         [KRPCProcedure]
-        public static double timeTgtAn()
+        public static double TimeTgtAn()
         { return mjvessel.orbit.TimeOfAscendingNode(mjvessel.targetObject.GetOrbit(), Planetarium.GetUniversalTime())-Planetarium.GetUniversalTime(); }
 
         /// <summary>
         /// Returns the time until next Euatorial Descending Node   
         /// </summary>
         [KRPCProcedure]
-        public static double timeTgtDn()
+        public static double TimeTgtDn()
         { return mjvessel.orbit.TimeOfDescendingNode(mjvessel.targetObject.GetOrbit(), Planetarium.GetUniversalTime()) - Planetarium.GetUniversalTime() ; }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace krpcmj
         /// Returns the difference in velocity now between vessel and target   
         /// </summary>
         [KRPCProcedure]
-        public static double relativeVel()
+        public static double RelativeVel()
         {
                 Vessel target = mjvessel.targetObject as Vessel;
                 Vector3d deltav = OrbitalManeuverCalculator.DeltaVToMatchVelocities(mjvessel.orbit, Planetarium.GetUniversalTime(), target.orbit);
@@ -164,14 +164,14 @@ namespace krpcmj
         /// Should return the phase angle of vessel in reference to target...  but...  doesn't.  Needs work   
         /// </summary>
         [KRPCProcedure]
-        public static double phaseAngle()
+        public static double PhaseAngle()
         {return mjvessel.orbit.PhaseAngle(mjvessel.targetObject.GetOrbit(), Planetarium.GetUniversalTime()); }
 
         /// <summary>
         /// Returns the biome currently underneath vessel
         /// </summary>
         [KRPCProcedure]
-        public static string biome()
+        public static string Biome()
         {return mjvessel.mainBody.BiomeMap.GetAtt(mjvessel.latitude * Math.PI / 180d, mjvessel.longitude * Math.PI / 180d).name; }
 
     }

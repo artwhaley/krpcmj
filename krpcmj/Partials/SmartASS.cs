@@ -4,41 +4,42 @@ using KRPC.Service.Attributes;
 
 namespace krpcmj
 {
+  [KRPCEnum(Service = "KRPCMJ")]
+    public enum SAMode
+    {
+        OFF,
+        KILLROT,
+        NODE,
+        SURFACE,
+        PROGRADE,
+        RETROGRADE,
+        NORMAL_PLUS,
+        NORMAL_MINUS,
+        RADIAL_PLUS,
+        RADIAL_MINUS,
+        RELATIVE_PLUS,
+        RELATIVE_MINUS,
+        TARGET_PLUS,
+        TARGET_MINUS,
+        PARALLEL_PLUS,
+        PARALLEL_MINUS,
+        ADVANCED,
+        AUTO,
+        SURFACE_PROGRADE,
+        SURFACE_RETROGRADE,
+        HORIZONTAL_PLUS,
+        HORIZONTAL_MINUS,
+        VERTICAL_PLUS
+    }
+
     public static partial class krpcmj
     {
-        [KRPCEnum]
-        public enum SAMode
-        {
-            OFF,
-            KILLROT,
-            NODE,
-            SURFACE,
-            PROGRADE,
-            RETROGRADE,
-            NORMAL_PLUS,
-            NORMAL_MINUS,
-            RADIAL_PLUS,
-            RADIAL_MINUS,
-            RELATIVE_PLUS,
-            RELATIVE_MINUS,
-            TARGET_PLUS,
-            TARGET_MINUS,
-            PARALLEL_PLUS,
-            PARALLEL_MINUS,
-            ADVANCED,
-            AUTO,
-            SURFACE_PROGRADE,
-            SURFACE_RETROGRADE,
-            HORIZONTAL_PLUS,
-            HORIZONTAL_MINUS,
-            VERTICAL_PLUS
-        }
 
         /// <summary>
         /// The smartASS mode   
         /// </summary>
         [KRPCProperty]
-        public static SAMode saMode
+        public static SAMode SAMode
         {
             set
             {
@@ -72,7 +73,7 @@ namespace krpcmj
         /// Toggles smartASS off 
         /// </summary>
         [KRPCProperty]
-        public static bool saStatus
+        public static bool SAStatus
         {
             get
             {
@@ -116,7 +117,7 @@ namespace krpcmj
         /// Activates smartASS and Sets Heading, Pitch and Roll for Surface Reference mode
         /// </summary>
         [KRPCProcedure]
-        public static void saSurface(float hdg, float pit, float rol)
+        public static void SASurface(float hdg, float pit, float rol)
         {
             MechJebCore activejeb =krpcmj.GetJeb();
             if (activejeb != null)
@@ -138,7 +139,7 @@ namespace krpcmj
         /// Enabling force roll and accepting a float for roll value
         /// </summary>
         [KRPCProcedure]
-        public static void saForceroll(float rol)
+        public static void SAForceroll(float rol)
         {
             MechJebCore activejeb =krpcmj.GetJeb();
             if (activejeb != null)
@@ -156,7 +157,7 @@ namespace krpcmj
         /// Disables Force Roll
         /// </summary>
         [KRPCProcedure]
-        public static void saForcerollClear()
+        public static void SAForcerollClear()
         {
             MechJebCore activejeb =krpcmj.GetJeb();
             if (activejeb != null)
